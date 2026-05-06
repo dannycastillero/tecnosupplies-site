@@ -3,621 +3,570 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TecnoSupplies — Soluciones IT, Automatización y Operaciones</title>
-  <meta name="description" content="En TecnoSupplies ayudamos a PYMES y empresas a optimizar su operación, reducir costos y crecer con soluciones tecnológicas claras, eficientes y hechas a la medida. Convertimos la tecnología en una ventaja competitiva real.." />
+  <title>TecnoSupplies — Partner Estratégico de Abastecimiento Tecnológico | Panamá</title>
+  <meta name="description" content="TecnoSupplies es el partner estratégico de abastecimiento y eficiencia operativa para empresas en Panamá. Equipos IT, infraestructura, seguridad, cloud y suministros empresariales desde 2020." />
+  <meta name="keywords" content="TecnoSupplies, IT Panamá, hardware empresarial, infraestructura IT, soluciones cloud, suministros oficina, seguridad tecnológica" />
+  <meta property="og:title" content="TecnoSupplies — Partner Estratégico en Tecnología | Panamá" />
+  <meta property="og:description" content="Simplificamos el acceso a tecnología y suministros empresariales con soluciones confiables, eficientes y adaptadas a cada organización." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root,
-    [data-theme="light"] {
-      --font-display: 'Electrolize', 'Inter', sans-serif;
+    /* ── DESIGN TOKENS ── */
+    :root {
+      --font-display: 'Electrolize', monospace;
       --font-body: 'Inter', system-ui, sans-serif;
 
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2.2rem, 1.4rem + 3vw, 4.6rem);
-      --text-hero: clamp(3rem, 1.4rem + 6vw, 7rem);
+      --text-xs:   clamp(0.72rem,  0.68rem + 0.2vw,  0.8rem);
+      --text-sm:   clamp(0.875rem, 0.82rem + 0.28vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.65vw, 1.5rem);
+      --text-xl:   clamp(1.4rem,   1.1rem  + 1.1vw,  2.1rem);
+      --text-2xl:  clamp(2rem,     1.3rem  + 2.8vw,  4.2rem);
+      --text-hero: clamp(2.8rem,   1.4rem  + 5.6vw,  6.5rem);
 
-      --space-1: .25rem;
-      --space-2: .5rem;
-      --space-3: .75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --space-24: 6rem;
-      --space-32: 8rem;
+      --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: .75rem;
+      --sp-4: 1rem;    --sp-5: 1.25rem; --sp-6: 1.5rem;
+      --sp-8: 2rem;    --sp-10: 2.5rem; --sp-12: 3rem;
+      --sp-16: 4rem;   --sp-20: 5rem;   --sp-24: 6rem;
 
-      --color-bg: #f5f7fb;
-      --color-surface: #ffffff;
-      --color-surface-2: #edf2fb;
-      --color-surface-offset: #e4ebf7;
-      --color-surface-accent: rgba(111, 131, 190, 0.10);
-      --color-border: rgba(6, 10, 45, 0.14);
-      --color-divider: rgba(6, 10, 45, 0.08);
-      --color-grid: rgba(111, 131, 190, 0.10);
-      --color-text: #060a2d;
-      --color-text-muted: #4f5a7d;
-      --color-text-faint: #7a86a8;
-      --color-primary: #060a2d;
-      --color-primary-hover: #101844;
-      --color-secondary: #6f83be;
-      --color-accent: #7fd7ff;
-      --color-accent-2: #8aa0e1;
-      --color-success: #46d6b8;
-      --shadow-sm: 0 1px 2px rgba(6, 10, 45, 0.04);
-      --shadow-md: 0 12px 40px rgba(24, 36, 84, 0.10);
-      --shadow-lg: 0 28px 80px rgba(16, 24, 68, 0.16);
-      --radius-sm: .5rem;
-      --radius-md: .9rem;
-      --radius-lg: 1.3rem;
-      --radius-xl: 1.8rem;
-      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
-      --content: min(1180px, calc(100vw - 2rem));
+      /* Light palette — sourced from logo */
+      --bg:            #f4f6fb;
+      --surface:       #ffffff;
+      --surface-2:     #edf1fa;
+      --surface-off:   #e3ebf7;
+      --surface-accent:rgba(111,131,190,.10);
+      --border:        rgba(6,10,45,.13);
+      --divider:       rgba(6,10,45,.08);
+      --grid-line:     rgba(111,131,190,.09);
+      --text:          #060a2d;
+      --text-muted:    #4c5677;
+      --text-faint:    #7a86a8;
+      --primary:       #060a2d;
+      --primary-hover: #0f1740;
+      --secondary:     #6f83be;
+      --accent:        #7fd7ff;
+      --accent-soft:   rgba(127,215,255,.14);
+      --success:       #46d6b8;
+
+      --shadow-sm: 0 1px 3px rgba(6,10,45,.05);
+      --shadow-md: 0 10px 36px rgba(18,28,76,.09);
+      --shadow-lg: 0 24px 72px rgba(12,20,60,.14);
+
+      --r-sm: .5rem; --r-md: .85rem; --r-lg: 1.2rem; --r-xl: 1.6rem;
+      --ease: 220ms cubic-bezier(.16,1,.3,1);
+      --content: min(1160px, calc(100vw - 2rem));
     }
 
     [data-theme="dark"] {
-      --color-bg: #060814;
-      --color-surface: #0c1122;
-      --color-surface-2: #111834;
-      --color-surface-offset: #161f3e;
-      --color-surface-accent: rgba(111, 131, 190, 0.12);
-      --color-border: rgba(187, 201, 244, 0.16);
-      --color-divider: rgba(187, 201, 244, 0.08);
-      --color-grid: rgba(127, 215, 255, 0.12);
-      --color-text: #eef3ff;
-      --color-text-muted: #b8c3e2;
-      --color-text-faint: #8190b8;
-      --color-primary: #eef3ff;
-      --color-primary-hover: #ffffff;
-      --color-secondary: #8aa0e1;
-      --color-accent: #7fd7ff;
-      --color-accent-2: #6f83be;
-      --color-success: #53f0ca;
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
-      --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.28);
-      --shadow-lg: 0 36px 96px rgba(0, 0, 0, 0.42);
+      --bg:            #050812;
+      --surface:       #0b1020;
+      --surface-2:     #101730;
+      --surface-off:   #151d3a;
+      --surface-accent:rgba(111,131,190,.13);
+      --border:        rgba(187,201,244,.15);
+      --divider:       rgba(187,201,244,.08);
+      --grid-line:     rgba(127,215,255,.10);
+      --text:          #eef3ff;
+      --text-muted:    #b4c0e0;
+      --text-faint:    #7e8db5;
+      --primary:       #eef3ff;
+      --primary-hover: #ffffff;
+      --secondary:     #8aa0e1;
+      --accent:        #7fd7ff;
+      --accent-soft:   rgba(127,215,255,.12);
+      --success:       #50ecca;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.25);
+      --shadow-md: 0 14px 44px rgba(0,0,0,.32);
+      --shadow-lg: 0 30px 88px rgba(0,0,0,.48);
     }
 
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme]) {
-        --color-bg: #060814;
-        --color-surface: #0c1122;
-        --color-surface-2: #111834;
-        --color-surface-offset: #161f3e;
-        --color-surface-accent: rgba(111, 131, 190, 0.12);
-        --color-border: rgba(187, 201, 244, 0.16);
-        --color-divider: rgba(187, 201, 244, 0.08);
-        --color-grid: rgba(127, 215, 255, 0.12);
-        --color-text: #eef3ff;
-        --color-text-muted: #b8c3e2;
-        --color-text-faint: #8190b8;
-        --color-primary: #eef3ff;
-        --color-primary-hover: #ffffff;
-        --color-secondary: #8aa0e1;
-        --color-accent: #7fd7ff;
-        --color-accent-2: #6f83be;
-        --color-success: #53f0ca;
-        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
-        --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.28);
-        --shadow-lg: 0 36px 96px rgba(0, 0, 0, 0.42);
+        --bg: #050812; --surface: #0b1020; --surface-2: #101730;
+        --surface-off: #151d3a; --surface-accent: rgba(111,131,190,.13);
+        --border: rgba(187,201,244,.15); --divider: rgba(187,201,244,.08);
+        --grid-line: rgba(127,215,255,.10); --text: #eef3ff;
+        --text-muted: #b4c0e0; --text-faint: #7e8db5;
+        --primary: #eef3ff; --primary-hover: #ffffff;
+        --secondary: #8aa0e1; --accent: #7fd7ff;
+        --accent-soft: rgba(127,215,255,.12); --success: #50ecca;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.25);
+        --shadow-md: 0 14px 44px rgba(0,0,0,.32);
+        --shadow-lg: 0 30px 88px rgba(0,0,0,.48);
       }
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      min-height: 100vh;
       font-family: var(--font-body);
       font-size: var(--text-base);
       line-height: 1.65;
-      color: var(--color-text);
-      background:
-        linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--color-accent) 4%, transparent) 100%),
-        var(--color-bg);
-      transition: background-color var(--transition), color var(--transition);
+      color: var(--text);
+      background: var(--bg);
+      transition: background var(--ease), color var(--ease);
+      min-height: 100vh;
     }
+    /* Subtle tech grid overlay */
     body::before {
       content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
       background-image:
-        linear-gradient(var(--color-grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: radial-gradient(circle at top, rgba(0,0,0,0.85), transparent 72%);
-      opacity: .55;
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse at top, rgba(0,0,0,.7) 0%, transparent 68%);
     }
     a { color: inherit; text-decoration: none; }
     img, svg { display: block; max-width: 100%; }
-    button, input, textarea { font: inherit; }
+    ul { list-style: none; padding: 0; }
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      letter-spacing: -.02em;
+      line-height: 1.05;
+    }
+    p { margin: 0; }
+
+    .container { width: var(--content); margin-inline: auto; }
+
+    /* Skip link */
     .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 1rem;
-      background: var(--color-surface);
-      color: var(--color-text);
-      padding: .75rem 1rem;
-      z-index: 1000;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-sm);
+      position: absolute; left: -999px; top: 1rem;
+      background: var(--surface); color: var(--text);
+      padding: .6rem 1rem; z-index: 200;
+      border: 1px solid var(--border); border-radius: var(--r-sm);
     }
     .skip-link:focus { left: 1rem; }
-    .container { width: var(--content); margin-inline: auto; }
+
+    /* ── HEADER ── */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: color-mix(in srgb, var(--color-bg) 76%, transparent);
-      border-bottom: 1px solid var(--color-divider);
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom: 1px solid var(--divider);
+      transition: background var(--ease);
     }
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-      padding: .85rem 0;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--sp-4); padding: .8rem 0;
     }
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .9rem;
-      min-height: 44px;
+      display: inline-flex; align-items: center; gap: .8rem; min-height: 44px;
     }
-    .brand-logo-image { width: auto; height: 44px; max-width: min(220px, 48vw); object-fit: contain; }
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
+    .brand-logo { height: 42px; width: auto; max-width: min(200px, 44vw); object-fit: contain; }
+    .nav {
+      display: none; align-items: center; gap: var(--sp-2);
     }
-    .theme-toggle {
-      min-width: 44px;
-      min-height: 44px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 999px;
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-text);
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-    }
-    .theme-toggle:hover, .theme-toggle:focus-visible { transform: translateY(-1px); border-color: var(--color-secondary); }
     .nav-link {
-      display: none;
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      min-height: 44px;
-      align-items: center;
+      font-size: var(--text-sm); color: var(--text-muted);
+      padding: .45rem .75rem; border-radius: var(--r-sm);
+      min-height: 40px; display: flex; align-items: center;
+      transition: color var(--ease), background var(--ease);
     }
+    .nav-link:hover { color: var(--text); background: var(--surface-accent); }
+    .header-cta {
+      display: none;
+      font-size: var(--text-sm); font-weight: 600;
+      padding: .6rem 1.2rem; border-radius: 999px;
+      background: var(--primary); color: var(--bg);
+      border: 1px solid transparent;
+      transition: transform var(--ease), background var(--ease), box-shadow var(--ease);
+    }
+    .header-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .header-actions { display: flex; align-items: center; gap: .65rem; }
+    .theme-toggle {
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text);
+      cursor: pointer;
+      transition: transform var(--ease), border-color var(--ease), background var(--ease);
+    }
+    .theme-toggle:hover { transform: translateY(-1px); border-color: var(--secondary); }
 
+    /* ── HERO ── */
     .hero {
-      position: relative;
-      padding: clamp(5rem, 11vw, 9rem) 0 var(--space-24);
+      position: relative; z-index: 1;
+      padding: clamp(4.5rem, 10vw, 8.5rem) 0 clamp(3rem, 7vw, 6rem);
       overflow: clip;
     }
+    /* Radial glow accent */
+    .hero::after {
+      content: "";
+      position: absolute; top: -10%; right: -5%;
+      width: clamp(300px, 50vw, 680px); height: clamp(300px, 50vw, 680px);
+      background: radial-gradient(circle, color-mix(in srgb, var(--secondary) 22%, transparent), transparent 68%);
+      pointer-events: none; z-index: -1;
+    }
     .hero-grid {
-      display: grid;
-      gap: var(--space-10);
-      align-items: end;
+      display: grid; gap: var(--sp-12); align-items: center;
     }
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .7rem;
-      padding: .55rem .85rem;
-      border: 1px solid var(--color-border);
-      border-radius: 999px;
-      font-size: var(--text-xs);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+      display: inline-flex; align-items: center; gap: .65rem;
+      padding: .45rem .85rem; border: 1px solid var(--border);
+      border-radius: 999px; font-size: var(--text-xs);
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--text-muted);
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
     }
     .eyebrow::before {
-      content: "";
-      width: .55rem;
-      height: .55rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
-      box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 14%, transparent);
+      content: ""; width: .5rem; height: .5rem; border-radius: 999px; flex: none;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent);
     }
-    h1, h2, h3 { margin: 0; font-family: var(--font-display); letter-spacing: -.02em; }
     .hero h1 {
-      margin-top: var(--space-6);
-      max-width: 11ch;
+      margin-top: var(--sp-6);
       font-size: var(--text-hero);
-      line-height: .95;
+      max-width: 12ch; line-height: .96;
     }
-    .hero p.lead {
-      margin: var(--space-6) 0 0;
-      max-width: 62ch;
-      color: var(--color-text-muted);
-      font-size: var(--text-lg);
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--secondary) 10%, var(--accent) 90%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .lead {
+      margin-top: var(--sp-6); max-width: 56ch;
+      font-size: var(--text-lg); color: var(--text-muted); line-height: 1.6;
     }
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-top: var(--space-8);
+      display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-8);
     }
     .btn {
-      min-height: 48px;
-      padding: .95rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid var(--color-border);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .6rem;
-      font-size: var(--text-sm);
-      font-weight: 600;
-      letter-spacing: .03em;
-      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+      min-height: 50px; padding: .9rem 1.5rem;
+      border-radius: 999px; border: 1px solid var(--border);
+      display: inline-flex; align-items: center; gap: .55rem;
+      font-size: var(--text-sm); font-weight: 600; letter-spacing: .025em;
+      cursor: pointer; transition: transform var(--ease), background var(--ease),
+        color var(--ease), border-color var(--ease), box-shadow var(--ease);
     }
     .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
     .btn-primary {
-      background: linear-gradient(135deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, var(--color-secondary) 30%));
-      color: var(--color-bg);
-      box-shadow: var(--shadow-md);
-      border-color: transparent;
+      background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 65%, var(--secondary)));
+      color: color-mix(in srgb, var(--bg) 95%, var(--accent));
+      border-color: transparent; box-shadow: var(--shadow-md);
     }
-    .btn-secondary {
-      background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-      color: var(--color-text);
+    .btn-primary:hover { box-shadow: var(--shadow-lg); }
+    .btn-ghost {
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
+      color: var(--text);
     }
+    .btn-ghost:hover { border-color: var(--secondary); }
+
+    /* Hero stats panel */
     .hero-panel {
       position: relative;
-      padding: var(--space-8);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, transparent), color-mix(in srgb, var(--color-surface-2) 96%, transparent));
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
+      padding: var(--sp-8);
+      border: 1px solid var(--border); border-radius: var(--r-xl);
+      background: linear-gradient(160deg,
+        color-mix(in srgb, var(--surface) 94%, transparent),
+        color-mix(in srgb, var(--surface-2) 98%, transparent));
+      box-shadow: var(--shadow-lg); overflow: hidden;
     }
     .hero-panel::before {
       content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 42%);
-      pointer-events: none;
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at top right,
+        color-mix(in srgb, var(--accent) 18%, transparent), transparent 46%);
     }
     .panel-label {
-      color: var(--color-text-faint);
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      margin-bottom: var(--space-6);
+      font-size: var(--text-xs); text-transform: uppercase;
+      letter-spacing: .18em; color: var(--text-faint); margin-bottom: var(--sp-6);
     }
-    .signal-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4);
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-4);
     }
-    .signal-card {
-      padding: var(--space-5);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-      min-height: 132px;
-      display: grid;
-      align-content: start;
-      gap: .45rem;
+    .stat-card {
+      padding: var(--sp-5); border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      background: color-mix(in srgb, var(--surface) 90%, transparent);
+      display: grid; gap: .35rem; align-content: start;
     }
-    .signal-card strong {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      color: var(--color-accent);
-      font-weight: 400;
+    .stat-card strong {
+      font-family: var(--font-display); font-size: var(--text-xl);
+      color: var(--accent); font-weight: 400;
     }
-    .signal-card span { color: var(--color-text-muted); font-size: var(--text-sm); }
-    .hero-note {
-      margin-top: var(--space-5);
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      max-width: 44ch;
+    .stat-card span { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.4; }
+    .panel-tagline {
+      margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--text-muted);
+      padding-top: var(--sp-5); border-top: 1px solid var(--divider);
     }
 
+    /* ── SECTION BASE ── */
     .section {
-      padding: clamp(var(--space-16), 9vw, var(--space-24)) 0;
-      position: relative;
-    }
-    .section-header {
-      display: grid;
-      gap: var(--space-4);
-      margin-bottom: var(--space-10);
-      max-width: 74ch;
+      padding: clamp(var(--sp-16), 8vw, var(--sp-24)) 0;
+      position: relative; z-index: 1;
     }
     .section-kicker {
-      color: var(--color-accent);
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: .14em;
+      display: inline-block;
+      font-size: var(--text-xs); text-transform: uppercase;
+      letter-spacing: .18em; color: var(--accent);
     }
-    .section-header p { color: var(--color-text-muted); margin: 0; }
+    .section-header {
+      display: grid; gap: var(--sp-4); margin-bottom: var(--sp-12);
+      max-width: 70ch;
+    }
+    .section-header h2 { font-size: var(--text-2xl); }
+    .section-header p { color: var(--text-muted); }
 
+    /* ── SERVICES ── */
     .services-grid {
-      display: grid;
-      gap: var(--space-5);
+      display: grid; gap: var(--sp-5);
     }
     .service-card {
-      position: relative;
-      padding: var(--space-8);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--color-border);
-      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 96%, transparent), color-mix(in srgb, var(--color-surface-2) 100%, transparent));
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-      min-height: 100%;
+      position: relative; padding: var(--sp-8);
+      border: 1px solid var(--border); border-radius: var(--r-xl);
+      background: linear-gradient(170deg,
+        color-mix(in srgb, var(--surface) 97%, transparent),
+        color-mix(in srgb, var(--surface-2) 100%, transparent));
+      box-shadow: var(--shadow-sm); overflow: hidden;
+      transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
     }
-    .service-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border)); box-shadow: var(--shadow-md); }
-    .service-card::before {
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+      box-shadow: var(--shadow-md);
+    }
+    /* bottom accent line */
+    .service-card::after {
       content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-      opacity: .75;
+      position: absolute; inset: auto 0 0 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: opacity var(--ease);
     }
-    .icon-box {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 1rem;
-      display: grid;
-      place-items: center;
-      background: var(--color-surface-accent);
-      color: var(--color-accent);
-      border: 1px solid color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
-      margin-bottom: var(--space-6);
+    .service-card:hover::after { opacity: .8; }
+
+    .service-icon {
+      width: 3rem; height: 3rem; border-radius: 1rem; margin-bottom: var(--sp-6);
+      display: grid; place-items: center;
+      background: var(--surface-accent); color: var(--accent);
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
     }
-    .service-card h3 { font-size: var(--text-xl); margin-bottom: var(--space-4); }
-    .service-card p { margin: 0 0 var(--space-6); color: var(--color-text-muted); }
-    .service-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: .7rem;
-      color: var(--color-text);
-      font-size: var(--text-sm);
-    }
+    .service-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-4); }
+    .service-card > p { color: var(--text-muted); margin-bottom: var(--sp-6); font-size: var(--text-sm); }
+    .service-list { display: grid; gap: .6rem; }
     .service-list li {
-      display: flex;
-      gap: .7rem;
-      align-items: flex-start;
+      display: flex; gap: .65rem; align-items: flex-start;
+      font-size: var(--text-sm); color: var(--text);
     }
     .service-list li::before {
-      content: "";
-      width: .55rem;
-      height: .55rem;
-      margin-top: .42rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
-      flex: none;
+      content: ""; width: .45rem; height: .45rem; flex: none;
+      margin-top: .48rem; border-radius: 999px;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
     }
 
+    /* ── VALUE PILLARS / DIFFERENTIATORS ── */
+    .pillars-grid {
+      display: grid; gap: var(--sp-4);
+    }
+    .pillar {
+      padding: var(--sp-6);
+      border: 1px solid var(--border); border-radius: var(--r-lg);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      display: flex; gap: var(--sp-5); align-items: flex-start;
+      transition: border-color var(--ease), background var(--ease);
+    }
+    .pillar:hover {
+      border-color: color-mix(in srgb, var(--secondary) 40%, var(--border));
+      background: color-mix(in srgb, var(--surface) 96%, transparent);
+    }
+    .pillar-icon {
+      font-family: var(--font-display); font-size: 1.4rem;
+      color: var(--accent); flex: none; width: 2.5rem; text-align: center; line-height: 1;
+      padding-top: .15rem;
+    }
+    .pillar h4 {
+      font-family: var(--font-display); font-size: var(--text-sm);
+      color: var(--text); margin-bottom: .3rem;
+    }
+    .pillar p { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.5; }
+
+    /* ── TRUST BANNER ── */
     .trust-banner {
-      border-block: 1px solid var(--color-divider);
-      background: color-mix(in srgb, var(--color-surface) 66%, transparent);
+      border-block: 1px solid var(--divider);
+      background: color-mix(in srgb, var(--surface) 60%, transparent);
+      padding: clamp(var(--sp-12), 7vw, var(--sp-20)) 0;
+      position: relative; z-index: 1;
     }
-    .trust-grid {
-      display: grid;
-      gap: var(--space-8);
-      align-items: center;
-      padding: var(--space-8) 0;
+    .trust-inner {
+      display: grid; gap: var(--sp-12); align-items: center;
     }
-    .logo-strip {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-3);
+    .trust-text h2 { font-size: var(--text-2xl); margin-bottom: var(--sp-4); }
+    .trust-text p { color: var(--text-muted); max-width: 52ch; }
+    .brands-row {
+      display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-8);
     }
-    .logo-pill {
-      min-height: 64px;
-      display: grid;
-      place-items: center;
-      border: 1px dashed var(--color-border);
-      border-radius: 999px;
-      color: var(--color-text-faint);
-      background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-      text-align: center;
-      padding: 0 var(--space-4);
+    .brand-chip {
+      padding: .6rem 1.2rem; border: 1px solid var(--border); border-radius: 999px;
+      font-family: var(--font-display); font-size: var(--text-sm);
+      color: var(--text-faint); letter-spacing: .08em;
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
+      transition: border-color var(--ease), color var(--ease);
+    }
+    .brand-chip:hover { border-color: var(--secondary); color: var(--text); }
+    .stat-big {
+      display: grid; gap: var(--sp-4); justify-items: start;
+    }
+    .stat-big strong {
+      font-family: var(--font-display); font-size: var(--text-2xl);
+      color: var(--accent); font-weight: 400;
+    }
+    .stat-big span { color: var(--text-muted); max-width: 26ch; line-height: 1.4; }
+    .stat-big .sub-stats {
+      display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-2);
+    }
+    .sub-stat { text-align: left; }
+    .sub-stat strong { font-family: var(--font-display); font-size: var(--text-xl); color: var(--secondary); font-weight: 400; display: block; }
+    .sub-stat span { font-size: var(--text-xs); color: var(--text-faint); text-transform: uppercase; letter-spacing: .1em; }
+
+    /* ── MISSION / VISION / VALUES ── */
+    .mvv-grid { display: grid; gap: var(--sp-5); }
+    .mvv-card {
+      padding: var(--sp-8); border: 1px solid var(--border); border-radius: var(--r-xl);
+      background: linear-gradient(160deg,
+        color-mix(in srgb, var(--surface) 94%, transparent),
+        color-mix(in srgb, var(--surface-2) 98%, transparent));
+      box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+    }
+    .mvv-card::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+    }
+    .mvv-label {
+      font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .18em;
+      color: var(--accent); margin-bottom: var(--sp-4);
+    }
+    .mvv-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-4); }
+    .mvv-card p { color: var(--text-muted); font-size: var(--text-sm); line-height: 1.6; }
+    .values-list { display: grid; gap: var(--sp-3); margin-top: var(--sp-4); }
+    .value-item {
+      display: flex; gap: var(--sp-3); align-items: flex-start;
       font-size: var(--text-sm);
     }
-    .stat-highlight {
-      display: grid;
-      gap: .4rem;
-      justify-items: start;
+    .value-dot {
+      width: .45rem; height: .45rem; flex: none; border-radius: 999px; margin-top: .52rem;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
     }
-    .stat-highlight strong {
-      font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      font-weight: 400;
-      color: var(--color-accent);
-    }
-    .stat-highlight span { color: var(--color-text-muted); }
+    .value-item strong { color: var(--text); }
+    .value-item span { color: var(--text-muted); }
 
-    .comparison {
-      display: grid;
-      gap: var(--space-5);
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid; gap: var(--sp-6); align-items: start;
     }
-    .theme-card {
-      padding: var(--space-8);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, transparent), color-mix(in srgb, var(--color-surface-2) 100%, transparent));
+    .contact-info { display: grid; gap: var(--sp-5); }
+    .contact-info h2 { font-size: var(--text-2xl); margin-bottom: var(--sp-4); }
+    .contact-info > p { color: var(--text-muted); max-width: 48ch; }
+    .contact-points { display: grid; gap: var(--sp-1); margin-top: var(--sp-6); }
+    .contact-point {
+      padding: var(--sp-4) 0; border-bottom: 1px solid var(--divider);
     }
-    .theme-preview {
-      margin-top: var(--space-6);
-      border-radius: calc(var(--radius-xl) - .35rem);
-      overflow: hidden;
-      border: 1px solid var(--color-border);
+    .contact-point:last-child { border-bottom: none; }
+    .contact-point strong {
+      display: block; font-size: var(--text-xs); text-transform: uppercase;
+      letter-spacing: .12em; color: var(--accent); margin-bottom: .25rem;
     }
-    .preview-frame {
-      padding: var(--space-5);
-      display: grid;
-      gap: var(--space-4);
-      min-height: 220px;
-      background-size: 24px 24px;
-      background-image:
-        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-    }
-    .preview-dark {
-      background-color: #09111e;
-      color: #eef3ff;
-    }
-    .preview-light {
-      background-color: #f3f7fc;
-      color: #060a2d;
-      background-image:
-        linear-gradient(rgba(6,10,45,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6,10,45,.05) 1px, transparent 1px);
-    }
-    .preview-chip {
-      width: fit-content;
-      padding: .45rem .75rem;
-      border-radius: 999px;
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,.12);
-      color: inherit;
-    }
-    .preview-light .preview-chip { border-color: rgba(6,10,45,.12); }
-    .preview-bar {
-      width: 54%;
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #6f83be, #7fd7ff);
-    }
-    .preview-card {
-      margin-top: auto;
-      padding: 1rem;
-      border-radius: 1rem;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .preview-light .preview-card {
-      background: rgba(255,255,255,.88);
-      border-color: rgba(6,10,45,.08);
-    }
-
-    .contact-wrap {
-      display: grid;
-      gap: var(--space-6);
-      align-items: stretch;
-    }
-    .contact-copy,
+    .contact-point span { font-size: var(--text-sm); color: var(--text-muted); }
     .contact-panel {
-      padding: var(--space-8);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 96%, transparent), color-mix(in srgb, var(--color-surface-2) 100%, transparent));
-      box-shadow: var(--shadow-sm);
+      padding: var(--sp-8); border: 1px solid var(--border); border-radius: var(--r-xl);
+      background: linear-gradient(160deg,
+        color-mix(in srgb, var(--surface) 94%, transparent),
+        color-mix(in srgb, var(--surface-2) 98%, transparent));
+      box-shadow: var(--shadow-md);
     }
-    .contact-copy p { color: var(--color-text-muted); }
-    .contact-points {
-      display: grid;
-      gap: var(--space-4);
-      margin-top: var(--space-6);
+    .contact-panel h3 { font-size: var(--text-lg); margin-bottom: var(--sp-6); }
+    .form-grid { display: grid; gap: var(--sp-4); }
+    .form-row { display: grid; gap: var(--sp-4); }
+    .field { display: grid; gap: .5rem; }
+    label { font-size: var(--text-sm); color: var(--text-muted); }
+    input, textarea, select {
+      width: 100%; border-radius: var(--r-md);
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 90%, transparent);
+      padding: .85rem 1rem; color: var(--text); font: inherit;
+      min-height: 50px; outline: none;
+      transition: border-color var(--ease), box-shadow var(--ease);
     }
-    .contact-points div {
-      padding-top: var(--space-4);
-      border-top: 1px solid var(--color-divider);
+    textarea { min-height: 140px; resize: vertical; }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
     }
-    .contact-points strong {
-      display: block;
-      margin-bottom: .3rem;
-      font-size: var(--text-sm);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--color-accent);
+    input::placeholder, textarea::placeholder { color: var(--text-faint); }
+    .form-note { font-size: var(--text-xs); color: var(--text-faint); margin-top: var(--sp-2); }
+    .whatsapp-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      margin-top: var(--sp-4); font-size: var(--text-sm);
+      color: var(--success); font-weight: 500;
+      border: 1px solid color-mix(in srgb, var(--success) 30%, var(--border));
+      padding: .65rem 1.1rem; border-radius: 999px;
+      background: color-mix(in srgb, var(--success) 8%, transparent);
+      transition: background var(--ease), transform var(--ease);
     }
-    form { display: grid; gap: var(--space-4); }
-    .field { display: grid; gap: .55rem; }
-    label {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-    input, textarea {
-      width: 100%;
-      border-radius: 1rem;
-      border: 1px solid var(--color-border);
-      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-      padding: .95rem 1rem;
-      color: var(--color-text);
-      min-height: 52px;
-      outline: none;
-    }
-    textarea { min-height: 160px; resize: vertical; }
-    input:focus, textarea:focus {
-      border-color: var(--color-accent);
-      box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 15%, transparent);
-    }
-    .form-note { color: var(--color-text-faint); font-size: var(--text-xs); }
+    .whatsapp-link:hover { transform: translateY(-1px); background: color-mix(in srgb, var(--success) 14%, transparent); }
 
+    /* ── FOOTER ── */
     footer {
-      padding: var(--space-8) 0 var(--space-12);
-      color: var(--color-text-faint);
-      font-size: var(--text-sm);
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--divider);
+      padding: var(--sp-8) 0 var(--sp-12);
     }
-    .footer-line {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-      padding-top: var(--space-6);
-      border-top: 1px solid var(--color-divider);
+    .footer-inner {
+      display: flex; flex-direction: column; gap: var(--sp-6);
+    }
+    .footer-top {
+      display: flex; flex-direction: column; gap: var(--sp-6);
+    }
+    .footer-brand { display: flex; align-items: center; gap: .75rem; }
+    .footer-logo { height: 36px; width: auto; }
+    .footer-tagline { font-size: var(--text-sm); color: var(--text-faint); max-width: 36ch; line-height: 1.5; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); }
+    .footer-link {
+      font-size: var(--text-sm); color: var(--text-faint);
+      transition: color var(--ease);
+    }
+    .footer-link:hover { color: var(--text); }
+    .footer-bottom {
+      display: flex; flex-direction: column; gap: var(--sp-2);
+      padding-top: var(--sp-6); border-top: 1px solid var(--divider);
+      font-size: var(--text-xs); color: var(--text-faint);
     }
 
+    /* ── REVEAL ANIMATIONS ── */
     .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 680ms ease, transform 680ms ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 80ms; }
+    .reveal-delay-2 { transition-delay: 160ms; }
+    .reveal-delay-3 { transition-delay: 240ms; }
 
+    /* ── RESPONSIVE ── */
+    @media (min-width: 680px) {
+      .nav, .header-cta { display: flex; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .footer-top { flex-direction: row; justify-content: space-between; align-items: start; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+    }
     @media (min-width: 760px) {
-      .nav-link { display: inline-flex; }
-      .hero-grid,
-      .trust-grid,
-      .contact-wrap,
-      .comparison {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .footer-line {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-inner { grid-template-columns: 1fr 1fr; }
+      .mvv-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
     }
-
-    @media (min-width: 1100px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr);
-      }
-      .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .hero-panel { margin-left: auto; }
+    @media (min-width: 1060px) {
+      .hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(340px, .75fr); }
+      .services-grid { grid-template-columns: repeat(4, 1fr); }
+      .mvv-grid { grid-template-columns: 1fr 1fr 2fr; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -626,251 +575,405 @@
   </style>
 </head>
 <body>
-  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <!-- ── HEADER ── -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="TecnoSupplies inicio">
-        <img class="brand-logo-image" src="./assets/img/logo.png" alt="Logo de TecnoSupplies" width="220" height="56" loading="eager" decoding="async" />
+      <a href="#top" class="brand" aria-label="TecnoSupplies — inicio">
+        <img class="brand-logo" src="./assets/img/logo.png" alt="Logo TecnoSupplies" width="200" height="50" loading="eager" decoding="async" />
       </a>
-      <div class="header-actions">
+      <nav class="nav" aria-label="Navegación principal">
         <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#nosotros">Nosotros</a>
         <a class="nav-link" href="#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-cta" href="#contacto">Agendar Consultoría</a>
         <button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
       </div>
     </div>
   </header>
 
-  <main id="contenido">
-    <section class="hero" id="top">
+  <main id="main">
+    <!-- ── HERO ── -->
+    <section class="hero" id="top" aria-label="Presentación TecnoSupplies">
       <div class="container hero-grid">
         <div class="reveal">
-          <span class="eyebrow">Tu Socio estratégico en tecnología y operaciones</span>
-          <h1>Impulsamos tu empresa con tecnología que sí genera resultados..</h1>
-          <p class="lead">Desde Panamá para clientes nacionales e internacionales, en TecnoSupplies diseñamos infraestructura, automatización y mejora operativa con mentalidad de ingeniería, experiencia acumulada desde 2020 y soluciones hechas a la medida de cada negocio.</p>
+          <span class="eyebrow">Partner estratégico en tecnología · Panamá</span>
+          <h1>Tu empresa,<br><em>potenciada</em> con tecnología real.</h1>
+          <p class="lead">TecnoSupplies es el hub integral de abastecimiento tecnológico para empresas en Panamá. Desde 2020, simplificamos el acceso a equipos IT, infraestructura, seguridad y suministros con un enfoque en eficiencia, confianza y atención personalizada.</p>
           <div class="hero-actions">
-            <a class="btn btn-secondary" href="#servicios">Explorar Servicios</a>
-            <a class="btn btn-primary" href="#contacto">Agendar Consultoría</a>
+            <a class="btn btn-ghost" href="#servicios">Ver Servicios</a>
+            <a class="btn btn-primary" href="#contacto">
+              Agendar Consultoría
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
 
-        <aside class="hero-panel reveal" aria-label="Indicadores principales de TecnoSupplies">
+        <aside class="hero-panel reveal reveal-delay-2" aria-label="Indicadores de valor">
           <div class="panel-label">Panorama de valor</div>
-          <div class="signal-grid">
-            <article class="signal-card">
-              <strong>+6 años</strong>
-              <span>Impulsando eficiencia empresarial desde 2020.</span>
-            </article>
-            <article class="signal-card">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <strong id="stat-years">+5</strong>
+              <span>Años impulsando eficiencia empresarial.</span>
+            </div>
+            <div class="stat-card">
               <strong>B2B</strong>
-              <span>Enfoque premium para empresas, startups y PYMEs.</span>
-            </article>
-            <article class="signal-card">
+              <span>Enfoque exclusivo para empresas y PYMEs.</span>
+            </div>
+            <div class="stat-card">
               <strong>360°</strong>
-              <span>Cubrimos IT, web, automatización, gestión y logística.</span>
-            </article>
-            <article class="signal-card">
-              <strong>Global</strong>
-              <span>Capacidad de atender requerimientos locales e internacionales.</span>
-            </article>
+              <span>Hardware, redes, seguridad, cloud y suministros.</span>
+            </div>
+            <div class="stat-card">
+              <strong>PTY</strong>
+              <span>Con cobertura regional desde Panamá.</span>
+            </div>
           </div>
-          <p class="hero-note">En TecnoSupplies ayudamos a PYMES y empresas a optimizar su operación, reducir costos y crecer con soluciones tecnológicas claras, eficientes y hechas a la medida. Convertimos la tecnología en una ventaja competitiva real.</p>
+          <p class="panel-tagline">Un solo proveedor para todas tus necesidades IT. Sin fricción, sin intermediarios innecesarios.</p>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="servicios">
+    <!-- ── SERVICES ── -->
+    <section class="section" id="servicios" aria-labelledby="servicios-title">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-kicker">Servicios Core</span>
-          <h2>Cuatro capacidades, una sola lógica: resolver cuellos de botella tecnológicos y operativos.</h2>
-          <p>TecnoSupplies integra ejecución técnica, visión de negocio y disciplina operativa para convertir requerimientos complejos en soluciones rentables, sostenibles y alineadas a crecimiento.</p>
+          <h2 id="servicios-title">Cinco capacidades, una sola lógica: resolver cuellos de botella tecnológicos y operativos.</h2>
+          <p>Actuamos como hub integral de soluciones empresariales. Abastecimiento tecnológico, infraestructura, seguridad, implementación digital y gestión de compras — todo bajo un mismo techo.</p>
         </div>
 
         <div class="services-grid">
+
+          <!-- 1. Hardware -->
           <article class="service-card reveal">
-            <div class="icon-box" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v9H4z"/><path d="M8 20h8"/><path d="M10 15v5"/><path d="M14 15v5"/></svg>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
             </div>
-            <h3>Soporte Técnico & Consultoría IT</h3>
-            <p>Blindamos la operación diaria con soporte experto, diagnóstico preciso y decisiones tecnológicas bien estructuradas para que tu empresa funcione sin fricción.</p>
+            <h3>Equipos de Cómputo y Hardware Empresarial</h3>
+            <p>Abastecimiento tecnológico confiable con las mejores marcas del mercado, adaptado al tamaño y necesidades de tu empresa.</p>
             <ul class="service-list">
-              <li>Hardware, software y reparación especializada para desktops y laptops.</li>
-              <li>Sistemas de cámaras, networking avanzado e infraestructura para startups y PYMEs.</li>
-              <li>Consultoría técnica para estabilizar, escalar y modernizar tu entorno IT.</li>
+              <li>Laptops, desktops y servidores corporativos</li>
+              <li>Periféricos, accesorios y dispositivos IT</li>
+              <li>Sourcing y adquisición de equipos especializados</li>
             </ul>
           </article>
 
-          <article class="service-card reveal">
-            <div class="icon-box" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M14 4l-4 16"/></svg>
+          <!-- 2. Suministros -->
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
             </div>
-            <h3>Desarrollo Web & Automatización Inteligente</h3>
-            <p>Creamos activos digitales que venden, automatizan y reducen carga operativa, combinando diseño de alto impacto con integraciones inteligentes orientadas a conversión.</p>
+            <h3>Suministros de Oficina y Consumibles</h3>
+            <p>Productos operativos recurrentes gestionados con eficiencia para mantener tu operación sin pausas ni sorpresas.</p>
             <ul class="service-list">
-              <li>Landing pages premium, sitios corporativos y e-commerce robustos listos para crecer.</li>
-              <li>Gestión de dominio, hosting, correos corporativos y arquitectura digital confiable.</li>
-              <li>Chatbots, flujos automatizados e inteligencia artificial adaptada a procesos reales.</li>
+              <li>Tóner, tinta y consumibles para impresión</li>
+              <li>Materiales y suministros de oficina</li>
+              <li>Gestión de reposición y pedidos recurrentes</li>
             </ul>
           </article>
 
-          <article class="service-card reveal">
-            <div class="icon-box" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6"/><path d="M5 6h7"/><path d="M5 18h10"/></svg>
+          <!-- 3. Infraestructura -->
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+                <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+              </svg>
             </div>
-            <h3>Gestión de Proyectos & Excelencia Operativa</h3>
-            <p>Transformamos la ejecución interna en una ventaja competitiva mediante marcos de trabajo claros, control del riesgo y procesos diseñados para sostener calidad y continuidad.</p>
+            <h3>Infraestructura IT y Redes</h3>
+            <p>Diseñamos, implementamos y mantenemos entornos de red estables, seguros y escalables para soportar el crecimiento de tu empresa.</p>
             <ul class="service-list">
-              <li>Project Management, optimización de procesos, Lean y adopción ágil con foco práctico.</li>
-              <li>Implementación de ISO 9001, ITIL, continuidad del negocio y gobierno operativo.</li>
-              <li>Gestión de riesgos para decisiones más previsibles y operaciones más resilientes.</li>
+              <li>Redes LAN/WAN, Wi-Fi corporativo y conectividad</li>
+              <li>Cableado estructurado e infraestructura física</li>
+              <li>Soporte técnico y mantenimiento preventivo</li>
             </ul>
           </article>
 
-          <article class="service-card reveal">
-            <div class="icon-box" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18"/><path d="M6 7V5h12v2"/><path d="M5 7l1 11h12l1-11"/><path d="M10 11v4"/><path d="M14 11v4"/></svg>
+          <!-- 4. Seguridad -->
+          <article class="service-card reveal reveal-delay-3">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
             </div>
-            <h3>Logística Internacional & Suministros</h3>
-            <p>Optimizamos compras estratégicas en el extranjero para que el abastecimiento internacional sea más ágil, rentable y alineado a tus prioridades operativas en Panamá.</p>
+            <h3>Soluciones de Seguridad Tecnológica</h3>
+            <p>Protegemos los activos digitales y físicos de tu empresa con soluciones de seguridad integrales y continuidad de negocio.</p>
             <ul class="service-list">
-              <li>Consultoría para sourcing, planificación y adquisición internacional inteligente.</li>
-              <li>Coordinación y optimización de importaciones con visión de costo total.</li>
-              <li>Apoyo táctico para reducir fricción entre compras, tiempos y disponibilidad.</li>
+              <li>Cámaras de vigilancia IP y sistemas CCTV</li>
+              <li>Firewalls, antivirus y seguridad de red</li>
+              <li>Continuidad de negocio tecnológica (BCP/DRP)</li>
             </ul>
           </article>
+
+          <!-- 5. Cloud & Digital — spanning full width on md+ -->
+          <article class="service-card reveal" style="grid-column: 1 / -1;">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
+            </div>
+            <h3>Implementación de Herramientas Digitales y Cloud</h3>
+            <p style="max-width: 76ch;">Acompañamos la transformación digital de tu empresa con implementaciones prácticas, migraciones cloud y herramientas que generan eficiencia operativa real desde el primer día.</p>
+            <ul class="service-list" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+              <li>Microsoft 365, Google Workspace y plataformas SaaS</li>
+              <li>Correos corporativos, dominio y hosting confiable</li>
+              <li>Migración y configuración de entornos cloud</li>
+              <li>Chatbots e integraciones de automatización inteligente</li>
+            </ul>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="trust-banner">
-      <div class="container trust-grid reveal">
-        <div>
-          <div class="section-kicker">Confianza</div>
-          <h2>Soluciones diseñadas para resolver los retos reales de tu empresa.</h2>
-          <p style="color: var(--color-text-muted); margin-top: 1rem;">Nos encargamos de que tu tecnología funcione de forma estable, segura y eficiente, para que puedas enfocarte en hacer crecer tu negocio sin interrupciones. Trabajamos con las mejores marcas del mercado para brindarte las soluciones requeridas por tu negocio</p>
-          <div class="logo-strip" aria-label="Marcadores de posición para clientes">
-            <div class="logo-pill">DELL</div>
-            <div class="logo-pill">HP</div>
-            <div class="logo-pill">UBIQUITI</div>
-            <div class="logo-pill">LINKSYS</div>
-          </div>
-        </div>
-        <div class="stat-highlight">
-          <strong id="stat-counter">0</strong>
-          <span>Desde 2020 impulsando la eficiencia empresarial.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+    <!-- ── DIFFERENTIATOR — GESTIÓN DE COMPRAS ── -->
+    <section class="section" aria-labelledby="diff-title">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-kicker">Dirección Empresarial</span>
-          <h2>Trabajamos con PYMES y empresas que buscan eficiencia, crecimiento y soluciones tecnológicas que realmente impacten su operación.</h2>
-          <p>La versión oscura proyecta un tono más ciber-profesional y premium; la versión clara aporta apertura, limpieza y cercanía corporativa. Ambas comparten la misma base cromática tomada del logo.</p>
+          <span class="section-kicker">Nuestro diferenciador</span>
+          <h2 id="diff-title">Gestión de Compras Centralizada: el motor de tu eficiencia operativa.</h2>
+          <p>No somos solo un proveedor. Somos el partner estratégico que centraliza, optimiza y ejecuta todo el ciclo de abastecimiento tecnológico de tu empresa.</p>
         </div>
-        <div class="comparison">
-          <article class="theme-card reveal">
-            <div class="section-kicker">Dark Mode</div>
-            <h3>Más tecnológica y ejecutiva</h3>
-            <p style="margin-top: 1rem; color: var(--color-text-muted);">Ideal para posicionar a TecnoSupplies como un partner de alto nivel, con una percepción más robusta para servicios IT, automatización y operaciones complejas.</p>
-            <div class="theme-preview">
-              <div class="preview-frame preview-dark">
-                <span class="preview-chip">Tecnología • Operaciones</span>
-                <h4 style="margin:0; font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1;">Infraestructura, automatización y continuidad.</h4>
-                <div class="preview-bar"></div>
-                <div class="preview-card">Contraste alto, acento luminoso y una sensación más premium.</div>
-              </div>
+        <div class="pillars-grid">
+          <div class="pillar reveal">
+            <div class="pillar-icon">⚙</div>
+            <div>
+              <h4>Centralización de Proveedores</h4>
+              <p>Un solo punto de contacto para todos tus requerimientos IT y de oficina. Menos gestión, más foco en tu negocio.</p>
             </div>
-          </article>
-          <article class="theme-card reveal">
-            <div class="section-kicker">Light Mode</div>
-            <h3>Más limpia y corporativa</h3>
-            <p style="margin-top: 1rem; color: var(--color-text-muted);">Funciona muy bien si el objetivo es transmitir claridad, confianza y accesibilidad comercial sin perder la identidad tecnológica.</p>
-            <div class="theme-preview">
-              <div class="preview-frame preview-light">
-                <span class="preview-chip">B2B • Panamá • Global</span>
-                <h4 style="margin:0; font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1;">Diseño claro para decisiones técnicas mejor comunicadas.</h4>
-                <div class="preview-bar"></div>
-                <div class="preview-card">Más neutral para audiencias corporativas tradicionales y procesos comerciales.</div>
-              </div>
+          </div>
+          <div class="pillar reveal reveal-delay-1">
+            <div class="pillar-icon">↓</div>
+            <div>
+              <h4>Optimización de Costos</h4>
+              <p>Negociamos, analizamos y estructuramos compras para que obtengas el mejor precio con la mejor calidad disponible.</p>
             </div>
-          </article>
+          </div>
+          <div class="pillar reveal reveal-delay-2">
+            <div class="pillar-icon">◈</div>
+            <div>
+              <h4>Procesos de Compra Eficientes</h4>
+              <p>Flujos claros, tiempos definidos y entrega puntual. Sin burocracia innecesaria ni pedidos perdidos.</p>
+            </div>
+          </div>
+          <div class="pillar reveal reveal-delay-3">
+            <div class="pillar-icon">⬡</div>
+            <div>
+              <h4>Soporte en Adquisiciones Corporativas</h4>
+              <p>Asesoría técnica y estratégica para decisiones de compra que impactan en la operación y en el presupuesto.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contacto">
-      <div class="container contact-wrap">
-        <div class="contact-copy reveal">
-          <span class="section-kicker">Contacto</span>
-          <h2>Hablemos de tu próximo proyecto o requerimiento técnico.</h2>
-          <p>Si necesitas resolver una operación crítica, lanzar una plataforma, ordenar procesos o optimizar compras tecnológicas, conversemos con foco en ejecución, retorno y velocidad.</p>
-          <div class="contact-points">
-            <div>
-              <strong>Enfoque</strong>
-              Soluciones a la medida, con criterio técnico y visión empresarial.
+    <!-- ── TRUST / BRANDS BANNER ── -->
+    <div class="trust-banner">
+      <div class="container trust-inner">
+        <div class="trust-text reveal">
+          <span class="section-kicker">Confianza</span>
+          <h2>Soluciones diseñadas para los retos reales de tu empresa.</h2>
+          <p>Trabajamos con las marcas líderes del mercado para garantizarte equipos y soluciones de calidad comprobada con respaldo de garantía.</p>
+          <div class="brands-row">
+            <span class="brand-chip">DELL</span>
+            <span class="brand-chip">HP</span>
+            <span class="brand-chip">UBIQUITI</span>
+            <span class="brand-chip">LINKSYS</span>
+            <span class="brand-chip">MICROSOFT</span>
+          </div>
+        </div>
+        <div class="stat-big reveal reveal-delay-2">
+          <strong id="stat-counter">0</strong>
+          <span>Años impulsando eficiencia empresarial en Panamá desde 2020.</span>
+          <div class="sub-stats">
+            <div class="sub-stat">
+              <strong>B2B</strong>
+              <span>Foco exclusivo</span>
             </div>
-            <div>
-              <strong>Cobertura</strong>
-              Panamá, clientes regionales y proyectos con alcance internacional.
+            <div class="sub-stat">
+              <strong>360°</strong>
+              <span>Cobertura integral</span>
             </div>
-            <div>
-              <strong>Formato</strong>
-              Consultoría inicial, diagnóstico técnico o propuesta estructurada.
+            <div class="sub-stat">
+              <strong>PTY</strong>
+              <span>Con alcance regional</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="contact-panel reveal">
-          <form>
-            <div class="field">
-              <label for="nombre">Nombre</label>
-              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" />
+    <!-- ── ABOUT / MISSION / VISION / VALUES ── -->
+    <section class="section" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">Quiénes Somos</span>
+          <h2 id="nosotros-title">Más que un proveedor — un socio estratégico de largo plazo.</h2>
+          <p>TecnoSupplies es una empresa con sede en Panamá especializada en la distribución de equipos tecnológicos, suministros de oficina y soluciones IT para empresas de todos los tamaños. Desde 2020, trabajamos con un enfoque en eficiencia, confianza y atención personalizada.</p>
+        </div>
+        <div class="mvv-grid">
+          <!-- Misión -->
+          <div class="mvv-card reveal">
+            <div class="mvv-label">Misión</div>
+            <h3>¿Por qué existimos?</h3>
+            <p>Simplificar y optimizar el acceso a tecnología y suministros empresariales, proporcionando soluciones confiables, eficientes y adaptadas a las necesidades de cada organización.</p>
+          </div>
+          <!-- Visión -->
+          <div class="mvv-card reveal reveal-delay-1">
+            <div class="mvv-label">Visión</div>
+            <h3>¿Hacia dónde vamos?</h3>
+            <p>Convertirnos en el socio estratégico líder en abastecimiento tecnológico y soluciones empresariales en Latinoamérica, impulsando la transformación y eficiencia operativa de nuestros clientes.</p>
+          </div>
+          <!-- Valores -->
+          <div class="mvv-card reveal reveal-delay-2">
+            <div class="mvv-label">Valores</div>
+            <h3>Lo que nos guía</h3>
+            <ul class="values-list">
+              <li class="value-item"><span class="value-dot"></span><div><strong>Eficiencia</strong> <span>— hacemos más simple lo complejo.</span></div></li>
+              <li class="value-item"><span class="value-dot"></span><div><strong>Confianza</strong> <span>— cumplimos lo que prometemos.</span></div></li>
+              <li class="value-item"><span class="value-dot"></span><div><strong>Velocidad</strong> <span>— respondemos rápido en un entorno que no espera.</span></div></li>
+              <li class="value-item"><span class="value-dot"></span><div><strong>Orientación al cliente</strong> <span>— entendemos el negocio, no solo el pedido.</span></div></li>
+              <li class="value-item"><span class="value-dot"></span><div><strong>Innovación práctica</strong> <span>— tecnología útil, no innecesaria.</span></div></li>
+              <li class="value-item"><span class="value-dot"></span><div><strong>Transparencia</strong> <span>— claridad en precios, procesos y soluciones.</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div>
+              <span class="section-kicker">Contacto</span>
+              <h2 id="contacto-title">Hablemos de tu próximo requerimiento tecnológico.</h2>
+              <p style="margin-top: 1rem; color: var(--text-muted);">Si necesitas equipos, infraestructura, seguridad, cloud o simplemente optimizar tus compras IT, contáctanos. Respondemos rápido.</p>
             </div>
-            <div class="field">
-              <label for="empresa">Empresa</label>
-              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa" />
+            <div class="contact-points">
+              <div class="contact-point">
+                <strong>Cobertura</strong>
+                <span>Panamá y clientes regionales con alcance internacional.</span>
+              </div>
+              <div class="contact-point">
+                <strong>Formato de atención</strong>
+                <span>Consultoría inicial, diagnóstico técnico o propuesta estructurada.</span>
+              </div>
+              <div class="contact-point">
+                <strong>Enfoque</strong>
+                <span>B2B · PYMEs · Empresas · Startups · Corporaciones.</span>
+              </div>
+              <div class="contact-point">
+                <strong>Tiempo de respuesta</strong>
+                <span>Menos de 24 horas hábiles. Siempre con criterio técnico.</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="correo">Correo corporativo</label>
-              <input id="correo" name="correo" type="email" placeholder="nombre@empresa.com" />
-            </div>
-            <div class="field">
-              <label for="mensaje">¿Qué necesitas resolver?</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos el reto, el alcance y el objetivo del proyecto."></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Solicitar Consultoría</button>
-            <p class="form-note">Este bloque puede integrarse luego con WhatsApp, Calendly, Zoho Forms, HubSpot o tu CRM preferido.</p>
-          </form>
+            <a class="whatsapp-link" href="https://wa.me/50700000000" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+              </svg>
+              Chatear por WhatsApp
+            </a>
+          </div>
+
+          <div class="contact-panel reveal reveal-delay-1">
+            <h3>Solicitar Información</h3>
+            <form class="form-grid" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="nombre">Nombre completo</label>
+                  <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="empresa">Empresa</label>
+                  <input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa" autocomplete="organization" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="correo">Correo corporativo</label>
+                <input id="correo" name="correo" type="email" placeholder="nombre@empresa.com" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="servicio">Servicio de interés</label>
+                <select id="servicio" name="servicio">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option>Equipos de cómputo y hardware</option>
+                  <option>Suministros y consumibles</option>
+                  <option>Infraestructura IT y redes</option>
+                  <option>Seguridad tecnológica</option>
+                  <option>Herramientas digitales y cloud</option>
+                  <option>Gestión de compras corporativas</option>
+                  <option>Consultoría general</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="mensaje">¿Qué necesitas resolver?</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos el reto, el alcance y el objetivo del proyecto o requerimiento."></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">
+                Enviar Solicitud
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <p class="form-note">También integramos con WhatsApp, HubSpot, Zoho CRM o tu plataforma preferida.</p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ── FOOTER ── -->
   <footer>
-    <div class="container footer-line">
-      <span>© TecnoSupplies — Soluciones IT, automatización y excelencia operativa.</span>
-      <span>Diseño conceptual premium para tecnosupplies.com</span>
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">
+            <img class="footer-logo" src="./assets/img/logo.png" alt="TecnoSupplies" width="140" height="36" loading="lazy" decoding="async" />
+          </div>
+          <p class="footer-tagline" style="margin-top: .75rem;">Partner estratégico de abastecimiento tecnológico y eficiencia operativa en Panamá.</p>
+        </div>
+        <nav class="footer-links" aria-label="Links del footer">
+          <a href="#servicios" class="footer-link">Servicios</a>
+          <a href="#nosotros" class="footer-link">Nosotros</a>
+          <a href="#contacto" class="footer-link">Contacto</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2020–2026 TecnoSupplies. Todos los derechos reservados. Panamá.</span>
+        <span>Tecnología accesible. Soluciones confiables.</span>
+      </div>
     </div>
   </footer>
 
+  <!-- ── SCRIPTS ── -->
   <script>
     (function () {
+      /* Theme toggle */
       const root = document.documentElement;
       const toggle = document.querySelector('[data-theme-toggle]');
-      let current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      let current = localStorage.getItem('ts-theme')
+        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       root.setAttribute('data-theme', current);
+
+      const moonSVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const sunSVG  = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 
       const renderIcon = () => {
         if (!toggle) return;
-        toggle.innerHTML = current === 'dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+        toggle.innerHTML = current === 'dark' ? moonSVG : sunSVG;
         toggle.setAttribute('aria-label', current === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
       };
       renderIcon();
@@ -878,55 +981,54 @@
       toggle?.addEventListener('click', () => {
         current = current === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', current);
+        localStorage.setItem('ts-theme', current);
         renderIcon();
       });
 
+      /* Intersection observer — reveal animations */
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
           }
         });
-      }, { threshold: 0.14 });
+      }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+      /* Animated counter */
       const counter = document.getElementById('stat-counter');
       let done = false;
       const runCounter = () => {
         if (done || !counter) return;
         done = true;
         const target = 6;
-        let value = 0;
+        let v = 0;
         const step = () => {
-          value += 1;
-          counter.textContent = '+' + value + ' años';
-          if (value < target) window.setTimeout(step, 120);
+          v++;
+          counter.textContent = '+' + v + ' años';
+          if (v < target) setTimeout(step, 110);
         };
         step();
       };
-      const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            runCounter();
-            counterObserver.disconnect();
-          }
-        });
+      const cObs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { runCounter(); cObs.disconnect(); } });
       }, { threshold: 0.5 });
-      if (counter) counterObserver.observe(counter);
+      if (counter) cObs.observe(counter);
 
-      document.querySelector('form')?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const button = event.currentTarget.querySelector('button[type="submit"]');
-        const original = button.textContent;
-        button.textContent = 'Solicitud Recibida';
-        button.disabled = true;
-        button.style.opacity = '.88';
-        window.setTimeout(() => {
-          button.textContent = original;
-          button.disabled = false;
-          button.style.opacity = '1';
-        }, 1800);
+      /* Form submit feedback */
+      document.querySelector('form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = e.currentTarget.querySelector('button[type="submit"]');
+        const orig = btn.innerHTML;
+        btn.innerHTML = 'Solicitud enviada ✓';
+        btn.disabled = true;
+        btn.style.opacity = '.8';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }, 2200);
       });
     }());
   </script>
