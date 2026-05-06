@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecnoSupplies — Soluciones IT, Automatización y Operaciones</title>
+  <meta name="description" content="TecnoSupplies impulsa infraestructura tecnológica, automatización inteligente, excelencia operativa y logística estratégica para empresas en Panamá y el mundo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root,
+    [data-theme="light"] {
+      --font-display: 'Electrolize', 'Inter', sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2.2rem, 1.4rem + 3vw, 4.6rem);
+      --text-hero: clamp(3rem, 1.4rem + 6vw, 7rem);
+
+      --space-1: .25rem;
+      --space-2: .5rem;
+      --space-3: .75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+
+      --color-bg: #f5f7fb;
+      --color-surface: #ffffff;
+      --color-surface-2: #edf2fb;
+      --color-surface-offset: #e4ebf7;
+      --color-surface-accent: rgba(111, 131, 190, 0.10);
+      --color-border: rgba(6, 10, 45, 0.14);
+      --color-divider: rgba(6, 10, 45, 0.08);
+      --color-grid: rgba(111, 131, 190, 0.10);
+      --color-text: #060a2d;
+      --color-text-muted: #4f5a7d;
+      --color-text-faint: #7a86a8;
+      --color-primary: #060a2d;
+      --color-primary-hover: #101844;
+      --color-secondary: #6f83be;
+      --color-accent: #7fd7ff;
+      --color-accent-2: #8aa0e1;
+      --color-success: #46d6b8;
+      --shadow-sm: 0 1px 2px rgba(6, 10, 45, 0.04);
+      --shadow-md: 0 12px 40px rgba(24, 36, 84, 0.10);
+      --shadow-lg: 0 28px 80px rgba(16, 24, 68, 0.16);
+      --radius-sm: .5rem;
+      --radius-md: .9rem;
+      --radius-lg: 1.3rem;
+      --radius-xl: 1.8rem;
+      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content: min(1180px, calc(100vw - 2rem));
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #060814;
+      --color-surface: #0c1122;
+      --color-surface-2: #111834;
+      --color-surface-offset: #161f3e;
+      --color-surface-accent: rgba(111, 131, 190, 0.12);
+      --color-border: rgba(187, 201, 244, 0.16);
+      --color-divider: rgba(187, 201, 244, 0.08);
+      --color-grid: rgba(127, 215, 255, 0.12);
+      --color-text: #eef3ff;
+      --color-text-muted: #b8c3e2;
+      --color-text-faint: #8190b8;
+      --color-primary: #eef3ff;
+      --color-primary-hover: #ffffff;
+      --color-secondary: #8aa0e1;
+      --color-accent: #7fd7ff;
+      --color-accent-2: #6f83be;
+      --color-success: #53f0ca;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 36px 96px rgba(0, 0, 0, 0.42);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --color-bg: #060814;
+        --color-surface: #0c1122;
+        --color-surface-2: #111834;
+        --color-surface-offset: #161f3e;
+        --color-surface-accent: rgba(111, 131, 190, 0.12);
+        --color-border: rgba(187, 201, 244, 0.16);
+        --color-divider: rgba(187, 201, 244, 0.08);
+        --color-grid: rgba(127, 215, 255, 0.12);
+        --color-text: #eef3ff;
+        --color-text-muted: #b8c3e2;
+        --color-text-faint: #8190b8;
+        --color-primary: #eef3ff;
+        --color-primary-hover: #ffffff;
+        --color-secondary: #8aa0e1;
+        --color-accent: #7fd7ff;
+        --color-accent-2: #6f83be;
+        --color-success: #53f0ca;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+        --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.28);
+        --shadow-lg: 0 36px 96px rgba(0, 0, 0, 0.42);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      color: var(--color-text);
+      background:
+        linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--color-accent) 4%, transparent) 100%),
+        var(--color-bg);
+      transition: background-color var(--transition), color var(--transition);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(var(--color-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at top, rgba(0,0,0,0.85), transparent 72%);
+      opacity: .55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+      background: var(--color-surface);
+      color: var(--color-text);
+      padding: .75rem 1rem;
+      z-index: 1000;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+    }
+    .skip-link:focus { left: 1rem; }
+    .container { width: var(--content); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--color-bg) 76%, transparent);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: .85rem 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .9rem;
+      min-height: 44px;
+    }
+    .brand-logo-image { width: auto; height: 44px; max-width: min(220px, 48vw); object-fit: contain; }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .theme-toggle {
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .theme-toggle:hover, .theme-toggle:focus-visible { transform: translateY(-1px); border-color: var(--color-secondary); }
+    .nav-link {
+      display: none;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      min-height: 44px;
+      align-items: center;
+    }
+
+    .hero {
+      position: relative;
+      padding: clamp(5rem, 11vw, 9rem) 0 var(--space-24);
+      overflow: clip;
+    }
+    .hero-grid {
+      display: grid;
+      gap: var(--space-10);
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .55rem .85rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      font-size: var(--text-xs);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    }
+    .eyebrow::before {
+      content: "";
+      width: .55rem;
+      height: .55rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 14%, transparent);
+    }
+    h1, h2, h3 { margin: 0; font-family: var(--font-display); letter-spacing: -.02em; }
+    .hero h1 {
+      margin-top: var(--space-6);
+      max-width: 11ch;
+      font-size: var(--text-hero);
+      line-height: .95;
+    }
+    .hero p.lead {
+      margin: var(--space-6) 0 0;
+      max-width: 62ch;
+      color: var(--color-text-muted);
+      font-size: var(--text-lg);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+    }
+    .btn {
+      min-height: 48px;
+      padding: .95rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: .03em;
+      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, var(--color-secondary) 30%));
+      color: var(--color-bg);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+    .btn-secondary {
+      background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+      color: var(--color-text);
+    }
+    .hero-panel {
+      position: relative;
+      padding: var(--space-8);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, transparent), color-mix(in srgb, var(--color-surface-2) 96%, transparent));
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 42%);
+      pointer-events: none;
+    }
+    .panel-label {
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      margin-bottom: var(--space-6);
+    }
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .signal-card {
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+      min-height: 132px;
+      display: grid;
+      align-content: start;
+      gap: .45rem;
+    }
+    .signal-card strong {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--color-accent);
+      font-weight: 400;
+    }
+    .signal-card span { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .hero-note {
+      margin-top: var(--space-5);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      max-width: 44ch;
+    }
+
+    .section {
+      padding: clamp(var(--space-16), 9vw, var(--space-24)) 0;
+      position: relative;
+    }
+    .section-header {
+      display: grid;
+      gap: var(--space-4);
+      margin-bottom: var(--space-10);
+      max-width: 74ch;
+    }
+    .section-kicker {
+      color: var(--color-accent);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+    .section-header p { color: var(--color-text-muted); margin: 0; }
+
+    .services-grid {
+      display: grid;
+      gap: var(--space-5);
+    }
+    .service-card {
+      position: relative;
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 96%, transparent), color-mix(in srgb, var(--color-surface-2) 100%, transparent));
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      min-height: 100%;
+    }
+    .service-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border)); box-shadow: var(--shadow-md); }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      opacity: .75;
+    }
+    .icon-box {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1rem;
+      display: grid;
+      place-items: center;
+      background: var(--color-surface-accent);
+      color: var(--color-accent);
+      border: 1px solid color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
+      margin-bottom: var(--space-6);
+    }
+    .service-card h3 { font-size: var(--text-xl); margin-bottom: var(--space-4); }
+    .service-card p { margin: 0 0 var(--space-6); color: var(--color-text-muted); }
+    .service-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: .7rem;
+      color: var(--color-text);
+      font-size: var(--text-sm);
+    }
+    .service-list li {
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+    }
+    .service-list li::before {
+      content: "";
+      width: .55rem;
+      height: .55rem;
+      margin-top: .42rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+      flex: none;
+    }
+
+    .trust-banner {
+      border-block: 1px solid var(--color-divider);
+      background: color-mix(in srgb, var(--color-surface) 66%, transparent);
+    }
+    .trust-grid {
+      display: grid;
+      gap: var(--space-8);
+      align-items: center;
+      padding: var(--space-8) 0;
+    }
+    .logo-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+    .logo-pill {
+      min-height: 64px;
+      display: grid;
+      place-items: center;
+      border: 1px dashed var(--color-border);
+      border-radius: 999px;
+      color: var(--color-text-faint);
+      background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+      text-align: center;
+      padding: 0 var(--space-4);
+      font-size: var(--text-sm);
+    }
+    .stat-highlight {
+      display: grid;
+      gap: .4rem;
+      justify-items: start;
+    }
+    .stat-highlight strong {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--color-accent);
+    }
+    .stat-highlight span { color: var(--color-text-muted); }
+
+    .comparison {
+      display: grid;
+      gap: var(--space-5);
+    }
+    .theme-card {
+      padding: var(--space-8);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, transparent), color-mix(in srgb, var(--color-surface-2) 100%, transparent));
+    }
+    .theme-preview {
+      margin-top: var(--space-6);
+      border-radius: calc(var(--radius-xl) - .35rem);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .preview-frame {
+      padding: var(--space-5);
+      display: grid;
+      gap: var(--space-4);
+      min-height: 220px;
+      background-size: 24px 24px;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    }
+    .preview-dark {
+      background-color: #09111e;
+      color: #eef3ff;
+    }
+    .preview-light {
+      background-color: #f3f7fc;
+      color: #060a2d;
+      background-image:
+        linear-gradient(rgba(6,10,45,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,10,45,.05) 1px, transparent 1px);
+    }
+    .preview-chip {
+      width: fit-content;
+      padding: .45rem .75rem;
+      border-radius: 999px;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.12);
+      color: inherit;
+    }
+    .preview-light .preview-chip { border-color: rgba(6,10,45,.12); }
+    .preview-bar {
+      width: 54%;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #6f83be, #7fd7ff);
+    }
+    .preview-card {
+      margin-top: auto;
+      padding: 1rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .preview-light .preview-card {
+      background: rgba(255,255,255,.88);
+      border-color: rgba(6,10,45,.08);
+    }
+
+    .contact-wrap {
+      display: grid;
+      gap: var(--space-6);
+      align-items: stretch;
+    }
+    .contact-copy,
+    .contact-panel {
+      padding: var(--space-8);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 96%, transparent), color-mix(in srgb, var(--color-surface-2) 100%, transparent));
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-copy p { color: var(--color-text-muted); }
+    .contact-points {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    .contact-points div {
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-divider);
+    }
+    .contact-points strong {
+      display: block;
+      margin-bottom: .3rem;
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--color-accent);
+    }
+    form { display: grid; gap: var(--space-4); }
+    .field { display: grid; gap: .55rem; }
+    label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    input, textarea {
+      width: 100%;
+      border-radius: 1rem;
+      border: 1px solid var(--color-border);
+      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+      padding: .95rem 1rem;
+      color: var(--color-text);
+      min-height: 52px;
+      outline: none;
+    }
+    textarea { min-height: 160px; resize: vertical; }
+    input:focus, textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 15%, transparent);
+    }
+    .form-note { color: var(--color-text-faint); font-size: var(--text-xs); }
+
+    footer {
+      padding: var(--space-8) 0 var(--space-12);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+    }
+    .footer-line {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-divider);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .nav-link { display: inline-flex; }
+      .hero-grid,
+      .trust-grid,
+      .contact-wrap,
+      .comparison {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .footer-line {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 1100px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr);
+      }
+      .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .hero-panel { margin-left: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="TecnoSupplies inicio">
+        <img class="brand-logo-image" src="./assets/img/logo.png" alt="Logo de TecnoSupplies" width="220" height="56" loading="eager" decoding="async" />
+      </a>
+      <div class="header-actions">
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Socio estratégico en tecnología y operaciones</span>
+          <h1>Tecnología clara. Ejecución precisa. Resultados que escalan.</h1>
+          <p class="lead">Desde Panamá para clientes nacionales e internacionales, en TecnoSupplies diseñamos infraestructura, automatización y mejora operativa con mentalidad de ingeniería, experiencia acumulada desde 2020 y soluciones hechas a la medida de cada negocio.</p>
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="#servicios">Explorar Servicios</a>
+            <a class="btn btn-primary" href="#contacto">Agendar Consultoría</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Indicadores principales de TecnoSupplies">
+          <div class="panel-label">Panorama de valor</div>
+          <div class="signal-grid">
+            <article class="signal-card">
+              <strong>+6 años</strong>
+              <span>Impulsando eficiencia empresarial desde 2020.</span>
+            </article>
+            <article class="signal-card">
+              <strong>B2B</strong>
+              <span>Enfoque premium para empresas, startups y PYMEs.</span>
+            </article>
+            <article class="signal-card">
+              <strong>360°</strong>
+              <span>Cubrimos IT, web, automatización, gestión y logística.</span>
+            </article>
+            <article class="signal-card">
+              <strong>Global</strong>
+              <span>Capacidad de atender requerimientos locales e internacionales.</span>
+            </article>
+          </div>
+          <p class="hero-note">Diseñado para transmitir una presencia premium, técnica y confiable, con una dirección visual inspirada en los tonos azul profundo y azul acero del logotipo original.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">Servicios Core</span>
+          <h2>Cuatro capacidades, una sola lógica: resolver cuellos de botella tecnológicos y operativos.</h2>
+          <p>TecnoSupplies integra ejecución técnica, visión de negocio y disciplina operativa para convertir requerimientos complejos en soluciones rentables, sostenibles y alineadas a crecimiento.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v9H4z"/><path d="M8 20h8"/><path d="M10 15v5"/><path d="M14 15v5"/></svg>
+            </div>
+            <h3>Soporte Técnico & Consultoría IT</h3>
+            <p>Blindamos la operación diaria con soporte experto, diagnóstico preciso y decisiones tecnológicas bien estructuradas para que tu empresa funcione sin fricción.</p>
+            <ul class="service-list">
+              <li>Hardware, software y reparación especializada para desktops y laptops.</li>
+              <li>Sistemas de cámaras, networking avanzado e infraestructura para startups y PYMEs.</li>
+              <li>Consultoría técnica para estabilizar, escalar y modernizar tu entorno IT.</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M14 4l-4 16"/></svg>
+            </div>
+            <h3>Desarrollo Web & Automatización Inteligente</h3>
+            <p>Creamos activos digitales que venden, automatizan y reducen carga operativa, combinando diseño de alto impacto con integraciones inteligentes orientadas a conversión.</p>
+            <ul class="service-list">
+              <li>Landing pages premium, sitios corporativos y e-commerce robustos listos para crecer.</li>
+              <li>Gestión de dominio, hosting, correos corporativos y arquitectura digital confiable.</li>
+              <li>Chatbots, flujos automatizados e inteligencia artificial adaptada a procesos reales.</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6"/><path d="M5 6h7"/><path d="M5 18h10"/></svg>
+            </div>
+            <h3>Gestión de Proyectos & Excelencia Operativa</h3>
+            <p>Transformamos la ejecución interna en una ventaja competitiva mediante marcos de trabajo claros, control del riesgo y procesos diseñados para sostener calidad y continuidad.</p>
+            <ul class="service-list">
+              <li>Project Management, optimización de procesos, Lean y adopción ágil con foco práctico.</li>
+              <li>Implementación de ISO 9001, ITIL, continuidad del negocio y gobierno operativo.</li>
+              <li>Gestión de riesgos para decisiones más previsibles y operaciones más resilientes.</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18"/><path d="M6 7V5h12v2"/><path d="M5 7l1 11h12l1-11"/><path d="M10 11v4"/><path d="M14 11v4"/></svg>
+            </div>
+            <h3>Logística Internacional & Suministros</h3>
+            <p>Optimizamos compras estratégicas en el extranjero para que el abastecimiento internacional sea más ágil, rentable y alineado a tus prioridades operativas en Panamá.</p>
+            <ul class="service-list">
+              <li>Consultoría para sourcing, planificación y adquisición internacional inteligente.</li>
+              <li>Coordinación y optimización de importaciones con visión de costo total.</li>
+              <li>Apoyo táctico para reducir fricción entre compras, tiempos y disponibilidad.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-banner">
+      <div class="container trust-grid reveal">
+        <div>
+          <div class="section-kicker">Confianza</div>
+          <h2>Clientes nacionales e internacionales que confían en nosotros.</h2>
+          <p style="color: var(--color-text-muted); margin-top: 1rem;">Espacio listo para insertar logotipos, sectores atendidos o marcas aliadas sin romper la limpieza visual del sitio.</p>
+          <div class="logo-strip" aria-label="Marcadores de posición para clientes">
+            <div class="logo-pill">Cliente Nacional 01</div>
+            <div class="logo-pill">Cliente Internacional 02</div>
+            <div class="logo-pill">Startup / PYME</div>
+            <div class="logo-pill">Empresa Corporativa</div>
+          </div>
+        </div>
+        <div class="stat-highlight">
+          <strong id="stat-counter">0</strong>
+          <span>Desde 2020 impulsando la eficiencia empresarial.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">Dirección visual</span>
+          <h2>Versión oscura y versión clara para evaluar la presencia de marca.</h2>
+          <p>La versión oscura proyecta un tono más ciber-profesional y premium; la versión clara aporta apertura, limpieza y cercanía corporativa. Ambas comparten la misma base cromática tomada del logo.</p>
+        </div>
+        <div class="comparison">
+          <article class="theme-card reveal">
+            <div class="section-kicker">Dark Mode</div>
+            <h3>Más tecnológica y ejecutiva</h3>
+            <p style="margin-top: 1rem; color: var(--color-text-muted);">Ideal para posicionar a TecnoSupplies como un partner de alto nivel, con una percepción más robusta para servicios IT, automatización y operaciones complejas.</p>
+            <div class="theme-preview">
+              <div class="preview-frame preview-dark">
+                <span class="preview-chip">Tecnología • Operaciones</span>
+                <h4 style="margin:0; font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1;">Infraestructura, automatización y continuidad.</h4>
+                <div class="preview-bar"></div>
+                <div class="preview-card">Contraste alto, acento luminoso y una sensación más premium.</div>
+              </div>
+            </div>
+          </article>
+          <article class="theme-card reveal">
+            <div class="section-kicker">Light Mode</div>
+            <h3>Más limpia y corporativa</h3>
+            <p style="margin-top: 1rem; color: var(--color-text-muted);">Funciona muy bien si el objetivo es transmitir claridad, confianza y accesibilidad comercial sin perder la identidad tecnológica.</p>
+            <div class="theme-preview">
+              <div class="preview-frame preview-light">
+                <span class="preview-chip">B2B • Panamá • Global</span>
+                <h4 style="margin:0; font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1;">Diseño claro para decisiones técnicas mejor comunicadas.</h4>
+                <div class="preview-bar"></div>
+                <div class="preview-card">Más neutral para audiencias corporativas tradicionales y procesos comerciales.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container contact-wrap">
+        <div class="contact-copy reveal">
+          <span class="section-kicker">Contacto</span>
+          <h2>Hablemos de tu próximo proyecto o requerimiento técnico.</h2>
+          <p>Si necesitas resolver una operación crítica, lanzar una plataforma, ordenar procesos o optimizar compras tecnológicas, conversemos con foco en ejecución, retorno y velocidad.</p>
+          <div class="contact-points">
+            <div>
+              <strong>Enfoque</strong>
+              Soluciones a la medida, con criterio técnico y visión empresarial.
+            </div>
+            <div>
+              <strong>Cobertura</strong>
+              Panamá, clientes regionales y proyectos con alcance internacional.
+            </div>
+            <div>
+              <strong>Formato</strong>
+              Consultoría inicial, diagnóstico técnico o propuesta estructurada.
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel reveal">
+          <form>
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" />
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa" />
+            </div>
+            <div class="field">
+              <label for="correo">Correo corporativo</label>
+              <input id="correo" name="correo" type="email" placeholder="nombre@empresa.com" />
+            </div>
+            <div class="field">
+              <label for="mensaje">¿Qué necesitas resolver?</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos el reto, el alcance y el objetivo del proyecto."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Solicitar Consultoría</button>
+            <p class="form-note">Este bloque puede integrarse luego con WhatsApp, Calendly, Zoho Forms, HubSpot o tu CRM preferido.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© TecnoSupplies — Soluciones IT, automatización y excelencia operativa.</span>
+      <span>Diseño conceptual premium para tecnosupplies.com</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      let current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', current);
+
+      const renderIcon = () => {
+        if (!toggle) return;
+        toggle.innerHTML = current === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+        toggle.setAttribute('aria-label', current === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      };
+      renderIcon();
+
+      toggle?.addEventListener('click', () => {
+        current = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', current);
+        renderIcon();
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      const counter = document.getElementById('stat-counter');
+      let done = false;
+      const runCounter = () => {
+        if (done || !counter) return;
+        done = true;
+        const target = 6;
+        let value = 0;
+        const step = () => {
+          value += 1;
+          counter.textContent = '+' + value + ' años';
+          if (value < target) window.setTimeout(step, 120);
+        };
+        step();
+      };
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runCounter();
+            counterObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      if (counter) counterObserver.observe(counter);
+
+      document.querySelector('form')?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const button = event.currentTarget.querySelector('button[type="submit"]');
+        const original = button.textContent;
+        button.textContent = 'Solicitud Recibida';
+        button.disabled = true;
+        button.style.opacity = '.88';
+        window.setTimeout(() => {
+          button.textContent = original;
+          button.disabled = false;
+          button.style.opacity = '1';
+        }, 1800);
+      });
+    }());
+  </script>
+</body>
+</html>
